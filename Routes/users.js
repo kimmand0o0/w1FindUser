@@ -78,13 +78,13 @@ router.get("/user/:_userId", async (req, res) => {
       }
   
       // 원하는 정보만 찍어주기
-      res.status(200).json({
+      const result = {
         userId: user._id,
         name: user.name,
         ID: user.ID,
         pw: user.pw,
-      });
-
+      };
+      res.status(200).json( {result : result} )
     } catch (error) {
       return res.status(400).json({ msg: "회원 상세 조회 실패." });
     }
